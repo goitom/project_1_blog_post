@@ -21,8 +21,8 @@ This analysis is motivated by the following business questions:
 * What if any factors can predict attitudes about diversity in the workplace?
 
 ### 2. Data Understanding
-As a first step in answering these questions, we will look at the 2017 Stack 
-Overflow Survey results. For the first two questions, we will focus on the 
+To answer these questions, we will look at the 2017 Stack Overflow Survey results. 
+For the first two questions, we focus on the 
 column `HomeRemote`, which corresponds to the following question:
 
 > How often do you work from home or remotely?
@@ -31,6 +31,10 @@ The first question looks at the relationship between `HomeRemote` and
 `Salary`, which corresponds to the question:
 
 > What is your current annual base salary, before taxes, and excluding bonuses, grants, or other compensation?
+
+The second question looks at the relationship between `HomeRemote` and two measures of satisfaction at work: `JobSatisfaction` and `CareerSatisfaction` which each ask the respondent to rate on a scale of 1 (least) to 10 (most) their satisfaction with their job and their career, respectively.
+
+![HomeRemoteBarChart](/figures/HomeRemoteBarChart.png)
 
 For the final question, we will focus on the column: `DiversityImportant`, 
 which corresponds to the following question:
