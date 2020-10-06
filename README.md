@@ -27,6 +27,13 @@ column `HomeRemote`, which corresponds to the following question:
 
 > How often do you work from home or remotely?
 
+Looking at the unprepped data, we see the following distribution of responses.
+![BarChartHomeRemote](/figures/BarChartHomeRemote.png)
+
+The data preparation step below will involve making decisions about how to recode and 
+collapse these eight responses into a binary independent variable. In particular, we
+need to handle the 15% of respondents for which the value is missing.
+
 The first question looks at the relationship between `HomeRemote` and 
 `Salary`, which corresponds to the question:
 
@@ -34,10 +41,10 @@ The first question looks at the relationship between `HomeRemote` and
 
 The second question looks at the relationship between `HomeRemote` and two measures of satisfaction at work: `JobSatisfaction` and `CareerSatisfaction` which each ask the respondent to rate on a scale of 1 (least) to 10 (most) their satisfaction with their job and their career, respectively.
 
-![BarChartHomeRemote](/figures/BarChartHomeRemote.png)
-
 For the final question, we will focus on the column: `DiversityImportant`, 
 which corresponds to the following question:
+Looking at the unprepped data, we see the following distribution of responses.
+![BarChartDiversity](/figures/BarChartDiversity.png)
 
 > Diversity in the workplace is important
 
