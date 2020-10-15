@@ -50,3 +50,45 @@ def recode_null_not_null_as_0_1(df, cols_not_to_recode):
     df_recode = df_recode.notnull().astype('int')
     df = pd.concat([df, df_recode], axis=1)
     return df
+
+def create_dummy_df(df, cols_to_dummy, dummy_na=True):
+    '''
+    INPUT:
+    df - pandas dataframe with categorical variables you want to dummy
+    cat_cols - list of strings that are associated with names of the categorical columns
+    dummy_na - Bool holding whether you want to dummy NA vals of categorical columns or not
+    
+    OUTPUT:
+    df - a new dataframe that has the following characteristics:
+            1. contains all columns that were not specified as categorical
+            2. removes all the original columns in cat_cols
+            3. dummy columns for each of the categorical columns in cat_cols
+            4. if dummy_na is True - it also contains dummy columns for the NaN values
+            5. Use a prefix of the column name with an underscore (_) for separating 
+    '''
+    for col in cols_to_dummy:
+        try:
+            df = pd.concat([df.drop(col, axis=1), pd.get_dummies(df[col], 
+                                                                 prefix=col, 
+                                                                 prefix_sep='_', 
+                                                                 drop_first=True,
+                                                                 dummy_na=dummy_na
+                                                                )], axis=1)
+        except:
+            continue
+
+    return df
+
+#creating labelEncoder
+def process_y_var_split_data(df, yvar):
+    df[yvar] = df[yvar].str.replace('<', 'less than ')
+    df[yvar] = df[yvar].str.replace('>', 'greater than ')
+    df[yvar] = df[yvar].astype('str')
+    df = df[df[yvar]!='nan']
+    
+    print(df[yvar].value_counts())
+    le = preprocessing.LabelEncoder()
+    X = df.drop(columns=[yvar])
+    y = le.fit_transform(df[yvar])
+    
+    return X, y 
