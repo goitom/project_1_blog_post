@@ -110,6 +110,9 @@ One of the cases where dropping observations is acceptable is when the dependent
 ##### Dropping Rows Where `CareerSatisfaction` is Missing
 ![BarChartHomeRemote_non_miss_career](/figures/BarChartHomeRemote_non_miss_career.png)
 
+##### Dropping Rows Where `DiversityImportant` is Missing
+![BarChartDiversity_non_miss](/figures/BarChartDiversity_non_miss.png)
+
 #### 3.2 Collapsing Categories
 
 ##### Collapsing `HomeRemote`
@@ -121,6 +124,36 @@ Let's collapse the responses into broader categories. In the case of `HomeRemote
 
 In either case, if are implicitly imputing missing values by treating them as if they were the modal response ("A few days each month").
 
+##### Collapsing Categorical Variables in Diversity Classification
+For the columns of interest in the diversity question, I collapsed according to the following critera:
+
+**Ordinal Variables**
+>**Strict**: "Very important", "Important"/"Strongly agree", "Agree"
+
+>**Lax**: "Very important", "Important", "Somewhat important"/"Strongly agree", "Agree", "Somewhat agree"
+
+**Non-Ordinal Categorical Variables**
+>**Gender**: Self-identified Males as 1, all other categories as 0
+>**Country**: Dummy variable indicating if the respondent resides in the United States
+
 ### 4. Data Modeling
 
+#### 4.1 Descriptive Statistics for HomeRemote Questions
+
+#### 4.2 Classification Models for Diversity Question
+To predict attitudes about the importance of diversity in the workplace, I compared the performance of four classifiers: Naive Bayes (GNB), Random Forest, Logistic Regression, AdaBoost. Each of these models were applied two models: one that used the 'Strict' recoding of variables, and one that used the 'Lax' recoding of variables.
+
+
 ### 5. Evaluate the Results
+
+#### 5.1 How `Salary` Varies across categories of `HomeRemote`
+First, let's look at a boxplot of salary across all response categories for `HomeRemote`:
+
+
+#### 5.2 Performance of Classifiers 
+| Classifier           | Accuracy (Strict Model) | Accuracy (Lax Model) |
+| -------------------- | ----------------------- | -------------------- |
+| GNB                  | 0.6008                  | 0.8379               |
+| Random Forest        | 0.6554                  | 0.8847               |
+| Logistic Regression  | 0.6598                  | 0.8859               |
+| AdaBoost             | 0.6603                  | 0.8861               |
