@@ -92,7 +92,7 @@ Let's focus on the columns above. Below are the column names and the correspondi
 | `Gender` | Which of the following do you currently identify as? |
 | `LearningNewTech` | Learning new technologies is fun. |
 
-It looks like feelings about the importance of diversity are associated with other mission-driven sentiments and concientiousness. In the following section, we walk through the 
+It looks like feelings about the importance of diversity are associated with other mission-driven sentiments and concientiousness. In the following section, we walk through how we prepared the data for further analysis.
 
 ### 3. Prepare Data
 All three of the columns of interest may require preparation, since the columns 
@@ -139,6 +139,7 @@ For the columns of interest in the diversity question, I collapsed according to 
 ### 4. Data Modeling
 
 #### 4.1 Descriptive Statistics for HomeRemote Questions
+To assess the association between remote work and other aspects of the job, I generate a variety of plots that describe the relationships between the variables of interest.
 
 #### 4.2 Classification Models for Diversity Question
 To predict attitudes about the importance of diversity in the workplace, I compared the performance of four classifiers: Naive Bayes (GNB), Random Forest, Logistic Regression, AdaBoost. Each of these models were applied two models: one that used the 'Strict' recoding of variables, and one that used the 'Lax' recoding of variables.
@@ -149,8 +150,16 @@ To predict attitudes about the importance of diversity in the workplace, I compa
 #### 5.1 How `Salary` Varies across categories of `HomeRemote`
 First, let's look at a boxplot of salary across all response categories for `HomeRemote`:
 
+![BoxPlotHomeRemote](/figures/BoxPlotHomeRemote.png)
+
+The number of categories makes comparison difficult. Looking at the lax definition of remote work
+![BoxPlotHomeRemoteLax](/figures/BoxPlotHomeRemoteSalaryLax.png)
+
+we see that the salary floors for both types of workers (remote and non-remote) are similar. However, the medians and the upper quartile range is larger for remote workers.
 
 #### 5.2 Performance of Classifiers 
+Turning to attitudes of diversity, predictors of attitudes about the importance of workplace  diversity, we see that the accuracy of the predictors increases markedly across all classifiers if we use the 'Lax' definition of the predictors. The table below summarizes the results.
+ 
 | Classifier           | Accuracy (Strict Model) | Accuracy (Lax Model) |
 | -------------------- | ----------------------- | -------------------- |
 | GNB                  | 0.6008                  | 0.8379               |
