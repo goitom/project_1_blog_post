@@ -1,4 +1,4 @@
-# Write a Data Science Blog Post
+# Workplace Attitudes about Diversity and Working from Home
 
 ## Overview
 The motivation for this project came from the particulars of this societal 
@@ -166,3 +166,10 @@ Turning to attitudes of diversity, predictors of attitudes about the importance 
 | Random Forest        | 0.6554                  | 0.8847               |
 | Logistic Regression  | 0.6598                  | 0.8859               |
 | AdaBoost             | 0.6603                  | 0.8861               |
+
+
+## Acknowledgements
+* [Collapsing Cagegorical Variables](https://stats.stackexchange.com/questions/146907/principled-way-of-collapsing-categorical-variables-with-many-levels)
+* [Correlation Measures](https://medium.com/@outside2SDs/an-overview-of-correlation-measures-between-categorical-and-continuous-variables-4c7f85610365)
+* [Cramér's V statistic](https://en.wikipedia.org/wiki/Cram%C3%A9r%27s_V)
+* [Pearson's Chi-Squared Test](https://en.wikipedia.org/wiki/Pearson%27s_chi-squared_test#Calculating_the_test-statistic)
