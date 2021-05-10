@@ -9,7 +9,7 @@ characteristics of these issues prior to the emergence of the COVID-19 pandemic
 and nationwide Black Lives Matter protests. The first two questions begin to 
 explore the connection between remote vs. office work and salary and job 
 satisfaction. The third question explores what attributes, if any, predict 
-worker attitudes to diversity in the workplace.
+worker attitudes to diversity in the workplace. Code repository for this post can be found [here](https://github.com/goitom/project_1_blog_post).
 
 ## CRISP-DM Process
 
